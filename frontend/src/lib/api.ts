@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:5000/api";
+const API = "https://early-cups-grin.loca.lt/api";
 
 const getToken = () =>
   typeof window !== "undefined" ? localStorage.getItem("findly_token") : null;
