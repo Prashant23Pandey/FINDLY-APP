@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-const API = "https://early-cups-grin.loca.lt/api";
+const API = "https://weak-moments-fall.loca.lt/api";
 
 interface User {
   id: string;
