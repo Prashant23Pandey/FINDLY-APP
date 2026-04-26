@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 45 100% 96%; /* Soft pastel yellow/cream */
+    --foreground: 220 50% 20%; 
+    
+    --primary: 350 85% 65%; /* Pokeball Red pastel */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 45 100% 60%; /* Pikachu Gold */
+    --secondary-foreground: 220 50% 20%;
+    
+    --accent: 195 90% 70%; /* Squirtle Blue */
+    --accent-foreground: 220 50% 20%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --muted: 45 30% 90%;
+    --muted-foreground: 220 20% 45%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 20%;
+    
+    --border: 45 20% 85%;
+    --input: 45 20% 85%;
+    --ring: 350 85% 65%;
+    
+    --radius: 2rem; /* Extremely round Pokemon style */
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+}
+
+/* Pokemon bouncy utilities */
+.poke-scroll {
+  background: white;
+  border: 4px dashed hsl(var(--primary) / 0.4);
+  box-shadow: 8px 8px 0px 0px hsl(var(--secondary) / 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.poke-scroll:hover {
+  transform: translateY(-5px) scale(1.02) rotate(-1deg);
+  box-shadow: 12px 12px 0px 0px hsl(var(--secondary) / 0.4);
+}
+
+.magic-border-glow {
+  position: relative;
+}
+
+.magic-border-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(253, 224, 71, 0.3),
+    transparent
+  );
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.magic-border-glow:hover::after {
+  opacity: 1;
+}
+
+/* Floating Particles Background */
+.particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Animated Title Glow */
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(253, 224, 71, 0.5),
+               0 0 20px rgba(253, 224, 71, 0.3);
+}
+
+.text-glow-aether {
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5),
+               0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+/* Ripple Magic Animation */
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth Transitions */
+.page-wipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--background));
+  z-index: 9999;
+  pointer-events: none;
+}
