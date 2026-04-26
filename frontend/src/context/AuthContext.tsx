@@ -13,7 +13,12 @@ interface User {
   xp: number;
   level: number;
   branch?: string;
+  year?: string;
+  phone?: string;
+  achievements?: string[];
   profilePic?: string;
+  itemsReturned?: number;
+  itemsReported?: number;
 }
 
 interface AuthContextType {

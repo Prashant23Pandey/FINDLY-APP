@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Search, SlidersHorizontal, Grid, List as ListIcon, MapPin, Clock, Zap, Filter, ShieldCheck } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -27,7 +27,7 @@ const RARITY_COLORS: Record<string, string> = {
   COMMON: "bg-gray-300 text-gray-700",
 };
 
-export default function SearchPage() {
+function SearchContent() {
   const { user } = useAuth();
   const searchParams = useSearchParams();
   const [view, setView] = useState<"grid" | "list">("grid");
@@ -347,5 +347,10 @@ export default function SearchPage() {
   );
 }
 
-// Add handleClaim to the methods above in search/page.tsx
-
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center font-outfit text-xl font-black">Loading...</div>}>
+      <SearchContent />
+    </Suspense>
+  );
+}

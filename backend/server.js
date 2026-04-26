@@ -44,14 +44,6 @@ let users = [
     notifications: [], createdAt: new Date(),
   },
   {
-    _id: 'user1', name: 'Prashant Pandey', email: '0251csai125@niet.co.in',
-    password: bcrypt.hashSync('ANURAG', 10), role: 'student',
-    enrollmentNo: '2201234', phone: '7991885976', branch: 'CSE AI', year: '3rd',
-    xp: 10, level: 1, itemsReported: 0, itemsReturned: 0,
-    achievements: ['joined'], isActive: true,
-    notifications: [], createdAt: new Date(),
-  },
-  {
     _id: 'user2', name: 'Manvi Varshney', email: '0251csai253@niet.co.in',
     password: bcrypt.hashSync('MANVI08', 10), role: 'student',
     enrollmentNo: '2201567', phone: '8533016764', branch: 'CSE AI', year: '2nd',

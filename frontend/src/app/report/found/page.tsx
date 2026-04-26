@@ -25,7 +25,7 @@ export default function ReportFoundPage() {
 
   useEffect(() => {
     if (user?.phone && (form.contactInfo === "" || form.contactInfo === "With me (I'll handover)")) {
-      setForm(f => ({ ...f, contactInfo: user.phone }));
+      setForm(f => ({ ...f, contactInfo: user.phone || "" }));
     }
   }, [user]);
   const [isDetecting, setIsDetecting] = useState(false);

@@ -167,7 +167,7 @@ export default function Home() {
                   <span className="font-black text-lg text-secondary-foreground">{LEADERBOARD_ICONS[i] || i + 1}</span>
                 </div>
                 <span className="font-black font-outfit text-foreground text-sm">{trainer.name}</span>
-                <span className="text-[10px] text-muted-foreground font-semibold">{trainer.branch} · {trainer.itemsReturned || 0} returned</span>
+                <span className="text-[10px] text-muted-foreground font-semibold">{trainer.branch}</span>
                 <div className="mt-2 flex items-center gap-1 px-3 py-1 bg-secondary/20 rounded-full">
                   <Zap className="w-3 h-3 text-secondary-foreground" fill="currentColor" />
                   <span className="text-xs font-black text-secondary-foreground">{trainer.xp} XP · Lvl {trainer.level}</span>

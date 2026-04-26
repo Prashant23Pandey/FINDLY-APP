@@ -26,7 +26,7 @@ export default function ReportLostPage() {
 
   useEffect(() => {
     if (user?.phone && !form.contactInfo) {
-      setForm(f => ({ ...f, contactInfo: user.phone }));
+      setForm(f => ({ ...f, contactInfo: user.phone || "" }));
     }
   }, [user]);
   const [isDetecting, setIsDetecting] = useState(false);
