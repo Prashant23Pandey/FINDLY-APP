@@ -5,6 +5,7 @@ const getToken = () =>
 
 const authHeaders = () => ({
   "Content-Type": "application/json",
+  "Bypass-Tunnel-Reminder": "true",
   ...(getToken() ? { Authorization: `Bearer ${getToken()}` } : {}),
 });
 
