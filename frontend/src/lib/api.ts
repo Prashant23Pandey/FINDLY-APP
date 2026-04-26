@@ -1,4 +1,4 @@
-const API = "https://weak-moments-fall.loca.lt/api";
+const API = "/api";
 
 const getToken = () =>
   typeof window !== "undefined" ? localStorage.getItem("findly_token") : null;
